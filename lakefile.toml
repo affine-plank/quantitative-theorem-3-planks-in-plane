@@ -24,10 +24,6 @@ name = "Geometry"
 leanOptions = [{ name = "autoImplicit", value = false }]
 
 [[lean_lib]]
-name = "AffinePlankConjecture"
-leanOptions = [{ name = "autoImplicit", value = false }]
-
-[[lean_lib]]
 name = "Additional"
 srcDir = "Additional"
 roots = ["ActivePlankRestriction", "AffineLevelCoincidence", "CanonicalHullNormalization", "CanonicalSampling", "CompactConvexBodyDomain", "ConvexBoundaryRuling", "ConvexMeasureRigidity", "CoveredSetPruning", "FiniteConvexUnion", "FiniteDimensionalBodyNormalization", "FiniteDimensionalCutCoordinates", "FiniteDimensionalEndpointDerivative", "FiniteDimensionalGlobalMinimum", "FiniteDimensionalPositiveGap", "FiniteFacetExtension", "FiniteHullHalfspaces", "FiniteHullSampling", "FinitePlankAffineTransport", "FinitePlankMerge", "FinitePlankNormalization", "GlobalBodyBoundaryRuling", "GlobalBodyCutVariation", "GlobalMinimumCoordinateTransport", "GlobalPlankBodyEnlargement", "GlobalPlankBodyMinimum", "GlobalPlankBoundaryMinimum", "GlobalPlankMergeMinimum", "GlobalSupportingCut", "GlobalSupportingFaceBalance", "InternalCutTrace", "JournalQuantitativeCorollaries", "MovingAffineCut", "MovingBandContinuity", "MovingConvexBodyGap", "MovingCutArea", "NoncoincidentCutDerivatives", "NormalizedPlankBodyMinimum", "PhysicalCutSections", "PhysicalFacetVariation", "PhysicalPlankNormalization", "PlanarAffineDirections", "PlanarBoundaryStrip", "PlanarFourMReduction", "PlanarGlobalPositivePolygon", "PlanarRuledMinimum", "PlanarUnitDirections", "PrunedPlankCounterexample", "PrunedPlankExtremes", "QuantitativeSamplingSupport", "SameBodyPlankEncoding", "SimplexFacetSharpExample", "SimplexSharpExample", "SupportPrunedGap", "SupportPruningGeometry", "SupportingCutVariation", "SupportingFaceEnlargement", "SupportingFaceEnlargementMeasure", "SupportingFaceResidual", "SupportingSectionTrace"]

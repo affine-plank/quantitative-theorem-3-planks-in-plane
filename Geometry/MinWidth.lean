@@ -5,7 +5,7 @@ Properties of `minWidth` and homothety scaling.
 -/
 module
 
-public import AffinePlankConjecture
+public import Geometry.AffinePlankConjecture
 public import Geometry.WidthAlong
 public import Mathlib.Data.Real.Pointwise
 

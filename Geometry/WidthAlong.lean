@@ -5,7 +5,7 @@ Properties of the `widthAlong` function.
 -/
 module
 
-public import AffinePlankConjecture
+public import Geometry.AffinePlankConjecture
 public import Mathlib.Algebra.Order.Group.Pointwise.CompleteLattice
 public import Mathlib.Data.Real.Pointwise
 
