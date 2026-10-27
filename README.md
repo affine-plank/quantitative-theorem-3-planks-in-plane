@@ -1,5 +1,7 @@
 # Quantitative affine plank inequalities
 
+[![Proof checks](https://github.com/affine-plank/quantitative-theorem-3-planks-in-plane/actions/workflows/proof.yml/badge.svg?branch=main)](https://github.com/affine-plank/quantitative-theorem-3-planks-in-plane/actions/workflows/proof.yml)
+
 **[Theorems and definitions](QuantitativePlanks.lean)** ·
 [Proof](QuantitativePlanks/Proof.lean) · [Verification](verification/README.md)
 
@@ -9,10 +11,10 @@ QAPC for two planks in every positive dimension.
 
 For a convex body `K` and planks with total relative width `R`, QAPC asserts
 
-$$
-\operatorname{vol}(K\setminus\bigcup_i P_i)
-\;\ge\;\max(0,1-R)^d\operatorname{vol}(K).
-$$
+```math
+\mathrm{vol}(K\setminus\bigcup_i P_i)
+\ge \max(0,1-R)^d\mathrm{vol}(K).
+```
 
 Relative width is plank width divided by the width of `K` in the same direction.
 The planar result has `d = 2`. The arbitrary-number, arbitrary-dimensional
