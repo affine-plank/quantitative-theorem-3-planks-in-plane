@@ -1,0 +1,45 @@
+name = "QuantitativePlanks"
+version = "0.1.0"
+defaultTargets = ["QuantitativePlanks"]
+weakLeanArgs = ["-j1"]
+
+[[lean_lib]]
+name = "QuantitativePlanks"
+
+[[lean_lib]]
+name = "Challenge"
+srcDir = "verification"
+
+[[lean_lib]]
+name = "Plank"
+moreLeanArgs = ["--tstack=32768"]
+leanOptions = [{ name = "autoImplicit", value = false }]
+
+[[lean_lib]]
+name = "ResearchFormalized"
+leanOptions = [{ name = "autoImplicit", value = false }]
+
+[[lean_lib]]
+name = "Geometry"
+leanOptions = [{ name = "autoImplicit", value = false }]
+
+[[lean_lib]]
+name = "AffinePlankConjecture"
+leanOptions = [{ name = "autoImplicit", value = false }]
+
+[[lean_lib]]
+name = "Additional"
+srcDir = "Additional"
+roots = ["ActivePlankRestriction", "AffineLevelCoincidence", "CanonicalHullNormalization", "CanonicalSampling", "CompactConvexBodyDomain", "ConvexBoundaryRuling", "ConvexMeasureRigidity", "CoveredSetPruning", "FiniteConvexUnion", "FiniteDimensionalBodyNormalization", "FiniteDimensionalCutCoordinates", "FiniteDimensionalEndpointDerivative", "FiniteDimensionalGlobalMinimum", "FiniteDimensionalPositiveGap", "FiniteFacetExtension", "FiniteHullHalfspaces", "FiniteHullSampling", "FinitePlankAffineTransport", "FinitePlankMerge", "FinitePlankNormalization", "GlobalBodyBoundaryRuling", "GlobalBodyCutVariation", "GlobalMinimumCoordinateTransport", "GlobalPlankBodyEnlargement", "GlobalPlankBodyMinimum", "GlobalPlankBoundaryMinimum", "GlobalPlankMergeMinimum", "GlobalSupportingCut", "GlobalSupportingFaceBalance", "InternalCutTrace", "JournalQuantitativeCorollaries", "MovingAffineCut", "MovingBandContinuity", "MovingConvexBodyGap", "MovingCutArea", "NoncoincidentCutDerivatives", "NormalizedPlankBodyMinimum", "PhysicalCutSections", "PhysicalFacetVariation", "PhysicalPlankNormalization", "PlanarAffineDirections", "PlanarBoundaryStrip", "PlanarFourMReduction", "PlanarGlobalPositivePolygon", "PlanarRuledMinimum", "PlanarUnitDirections", "PrunedPlankCounterexample", "PrunedPlankExtremes", "QuantitativeSamplingSupport", "SameBodyPlankEncoding", "SimplexFacetSharpExample", "SimplexSharpExample", "SupportPrunedGap", "SupportPruningGeometry", "SupportingCutVariation", "SupportingFaceEnlargement", "SupportingFaceEnlargementMeasure", "SupportingFaceResidual", "SupportingSectionTrace"]
+leanOptions = [{ name = "autoImplicit", value = false }]
+
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "cfc55fc58714a59dc06e6e79edc6d1d95140d3c2"
+
+[[require]]
+name = "TauCeti"
+git = "https://github.com/TauCetiProject/TauCeti"
+rev = "06c5261cef788be30609819959c79eb16a7f5d52"

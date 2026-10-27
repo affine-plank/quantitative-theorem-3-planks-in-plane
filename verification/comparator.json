@@ -1,0 +1,15 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "QuantitativePlanks",
+  "theorem_names": [
+    "QuantitativePlanks.planar_cover",
+    "QuantitativePlanks.planar_quantitative",
+    "QuantitativePlanks.two_planks"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

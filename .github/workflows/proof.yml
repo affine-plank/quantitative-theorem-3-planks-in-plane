@@ -1,0 +1,36 @@
+name: Proof checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  proof:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    env:
+      LEAN_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: leanprover/lean-action@50fcf42d2e460296f1a34b402e990d1b24f8b596
+        with:
+          auto-config: false
+          build: false
+          test: false
+          lint: false
+          use-mathlib-cache: false
+          use-github-cache: false
+      - name: Fetch the public Mathlib cache
+        run: lake exe cache get
+      - name: Build main and optional results from source
+        run: lake build QuantitativePlanks +QuantitativePlanks.Extensions +QuantitativePlanks.Equality +QuantitativePlanks.Companion
+      - name: Install Comparator sandbox
+        run: sudo apt-get update && sudo apt-get install -y bubblewrap
+      - name: Compare independent statements and replay public proofs
+        run: lake comparator --config verification/comparator.json
