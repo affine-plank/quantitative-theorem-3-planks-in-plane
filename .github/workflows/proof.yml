@@ -15,6 +15,12 @@ jobs:
     env:
       LEAN_NUM_THREADS: "1"
     steps:
+      - name: Make room for Lean and Mathlib
+        run: |
+          df -h .
+          # These preinstalled SDKs are unused on this disposable hosted runner.
+          sudo rm -rf /usr/local/lib/android /usr/share/dotnet /opt/ghc
+          df -h .
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           persist-credentials: false
@@ -28,9 +34,17 @@ jobs:
           use-github-cache: false
       - name: Fetch the public Mathlib cache
         run: lake exe cache get
+      - name: Remove downloaded cache archives
+        run: |
+          # Keep the compiled dependencies; only downloaded .ltar files are removed.
+          lake exe cache clean!
+          df -h .
       - name: Build main and optional results from source
         run: lake build QuantitativePlanks +QuantitativePlanks.Extensions +QuantitativePlanks.Equality +QuantitativePlanks.Companion
       - name: Install Comparator sandbox
         run: sudo apt-get update && sudo apt-get install -y bubblewrap
       - name: Compare independent statements and replay public proofs
         run: lake comparator --config verification/comparator.json
+      - name: Report remaining disk space
+        if: always()
+        run: df -h .
